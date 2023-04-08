@@ -13,14 +13,15 @@
 
 function solution(s) {
     let answer = []
-    let a = s.length
-    if(a !== 4 && a !== 6) {
-        answer = false
+    if (s.length !== 4 && s.length !== 6) {
+        answer =  false;
     }
-    if(isNaN(s)){
-        answer = false
+    for (let i = 0; i < s.length; i++) {
+        if (isNaN(parseInt(s[i]))) {
+            answer = false;
+        }
     }
-    answer = true
+    answer = true;
     console.log(answer)
 }
 console.log(solution("a234"))
