@@ -18,11 +18,9 @@
 
 function solution(n){
     var answer = [];
-    let a = n.toString().split(' ')
-    let b = Number(a.reduce((x, y) => x + y))
-    answer = b
-    
-    console.log(a)
+    let a = Array.from(String(n), Number)
+    answer = a.reduce((a, b) => a + b, 0)
+    console.log(answer)
 }
 
-console.log(solution(123))
+console.log(solution(12123413))

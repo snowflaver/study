@@ -12,16 +12,15 @@
 // "1234"	true
 
 function solution(s) {
-    let answer = []
+    let answer = true
     if (s.length !== 4 && s.length !== 6) {
-        answer =  false;
+        answer = false
     }
-    for (let i = 0; i < s.length; i++) {
-        if (isNaN(parseInt(s[i]))) {
-            answer = false;
+    Array.from(s).forEach((char) => {
+        if (isNaN(parseInt(char))) {
+            answer = false
         }
-    }
-    answer = true;
+    });    
     console.log(answer)
 }
-console.log(solution("a234"))
+console.log(solution("612345"))
