@@ -28,14 +28,15 @@
 // 626331은 500번을 시도해도 1이 되지 못하므로 -1을 리턴해야 합니다.
 
 function solution(num) {
-    var answer = 0;
-    for (let i = 0; i <= 500; i++) {
-        let a = ''
-        if((num / 2) % 2 === 0 ) {
-            a = a += num[i] / 2
+    let answer = 0
+    while (num > 1 && answer <= 500) {
+        if(num % 2 === 0) {
+            num = num / 2
+        } else {
+            num = num * 3 + 1
         }
-        answer = -1
+        answer++
     }
-    console.log(a)
+    return answer > 500 ? -1 : answer
 }
-console.log(solution(6))
+console.log(solution(92312311))

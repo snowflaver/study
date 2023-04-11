@@ -13,12 +13,26 @@
 // [10]	        [-1]
 
 function solution(arr) {
-    var answer = [];
-    const a = 
+    const a = Math.min(...arr)
+    const i = arr.indexOf(a)
     if (arr.length > 1) {
-        
+        arr.splice(i, 1)
+        return arr
+    } else {
+        return [-1]
     }
-    
-    console.log(a)
 }
 console.log(solution([4,3,2,1]))
+//--------------------------------------------------
+
+function solution(arr) {
+    var answer = [];
+    const a = arr.slice().sort((a, b) => a - b)
+    const b = a[0]
+    if (a.length > 1) {
+        answer = a.slice(b)
+    } else {
+        answer = [-1]
+    }
+    return answer;
+}
